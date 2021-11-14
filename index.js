@@ -1,13 +1,14 @@
 const SpotifyWebApi = require('spotify-web-api-node')
 const {Telegraf} = require('telegraf')
 const express = require('express');
+const config = require('./config/default.json')
 const app = express();
 
-const bot = new Telegraf('2092983043:AAH-YZFrPTHTK4IjrEahpZrISjQx0KqUU_E')
+const bot = new Telegraf(config.telegram.bot_token)
 
 const spotifyApi = new SpotifyWebApi({
-    clientId: '28a702063ba3414eafc77ff7dfeb8e96',
-    clientSecret: 'ca266714ea794b1d9c47892e5822af6d'
+    clientId: config.spotify.client_id,
+    clientSecret: config.spotify.client_secret
 });
 
 bot.on('audio',  (ctx) => {
