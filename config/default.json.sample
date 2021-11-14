@@ -1,0 +1,9 @@
+{
+    "telegram":{
+        "bot_token": "bot token"
+    },
+    "spotify": {
+        "client_id": "28a702063ba3414eafc77ff7dfeb8e96",
+        "client_secret": "ca266714ea794b1d9c47892e5822af6d"
+    }
+}
