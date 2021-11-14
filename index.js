@@ -4,11 +4,11 @@ const express = require('express');
 const config = require('./config/default.json')
 const app = express();
 
-const bot = new Telegraf(config.telegram.bot_token)
+const bot = new Telegraf(process.env.BOT_TOKEN)
 
 const spotifyApi = new SpotifyWebApi({
-    clientId: config.spotify.client_id,
-    clientSecret: config.spotify.client_secret
+    clientId: process.env.SPOTIFY_CLIENT_ID,
+    clientSecret: process.env.SPOTIFY_CLIENT_SECRET
 });
 
 bot.on('audio',  (ctx) => {
