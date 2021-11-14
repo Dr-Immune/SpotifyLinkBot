@@ -1,7 +1,7 @@
 const SpotifyWebApi = require('spotify-web-api-node')
 const {Telegraf} = require('telegraf')
 const express = require('express');
-const config = require('./config/default.json')
+require('dotenv').config();
 const app = express();
 
 const bot = new Telegraf(process.env.BOT_TOKEN)
